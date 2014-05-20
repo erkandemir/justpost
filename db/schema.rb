@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517221235) do
+ActiveRecord::Schema.define(version: 20140519110214) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20140517221235) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug_url"
   end
 
 end

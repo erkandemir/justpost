@@ -1,5 +1,7 @@
 
 <% @posts.each do  |item| %>
-		<p> <%= item.title %> </p>
-<% end %>
+  <% title = "#{item.created_at.to_s} - #{item.title}" %>
+		<%= link_to title, post_path(item) %><br>
+
+<% end %>			
 
