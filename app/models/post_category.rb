@@ -1,5 +1,5 @@
 class PostCategory < ActiveRecord::Base
-	validates_uniqueness_of :slug_url
+	
 	before_save :before_save
 
 	private
