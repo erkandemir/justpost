@@ -1,7 +1,5 @@
 class PostController < ApplicationController
-
 	before_action:get_categories
-
 	def index   
 		if(params[:slug_url] != nil)
 			category = PostCategory.find_by_slug_url(params[:slug_url])

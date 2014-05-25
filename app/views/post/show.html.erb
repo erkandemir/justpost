@@ -1,1 +1,11 @@
-<%= @post.content %>
+<% content_for :content do %>
+	<div class="row">
+		<div class="col-md-8">
+		<h1><%= @post.title %> </h1><br>
+ 			<%= @post.content %>
+		</div>
+		<div class="col-md-4">
+			<%= render "post_category/categories" %>
+		</div>
+	</div>
+<%end %>

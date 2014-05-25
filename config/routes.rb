@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root 'post#index'
+  root 'main#index'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # Example of regular route:
 
   get 'post' => 'post#index' , as: 'latest_post'
-
+  
   get 'post/:slug_url' => 'post#index', as: 'post_category'
 
   get 'post/:slug_url/:slug_url' => 'post#show', as: 'post'

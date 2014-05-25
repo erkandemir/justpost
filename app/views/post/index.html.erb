@@ -1,8 +1,15 @@
-<% @posts.each do |item| %>
-  <% title = "#{item.created_at.to_s} - #{item.title}" %>
-		<%= link_to title, post_path(item) %><br>
-
-<% end %>			
+<% content_for :content do %>
+	<div class="row">
+		<div class="col-md-8">
+		<% @posts.each do |item| %>
+  			<% title = "#{item.title}" %></h1>
+			<h3><%= link_to title, post_path(item) %></h3>
+			<p><%= truncate item.content, length: 160 %> </p>
+		<% end %>	
+		</div>
+		<div class="col-md-4">
+			<%= render "post_category/categories" %>
+		</div>
+<%end%>		
  
 
-<%= render "post_category/categories" %>
