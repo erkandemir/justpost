@@ -1,7 +1,8 @@
-
-<% @posts.each do  |item| %>
+<% @posts.each do |item| %>
   <% title = "#{item.created_at.to_s} - #{item.title}" %>
 		<%= link_to title, post_path(item) %><br>
 
 <% end %>			
+ 
 
+<%= render "post_category/categories" %>

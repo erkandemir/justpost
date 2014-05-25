@@ -6,6 +6,7 @@ ActiveAdmin.register PostCategory do
     id_column
     column :title
     column :created_at
+    column :slug_url
  
     actions
   end
@@ -19,5 +20,9 @@ ActiveAdmin.register PostCategory do
     end
     f.actions
   end
+  
+    controller do
+        defaults :finder => :find_by_slug_url
+    end
 
 end

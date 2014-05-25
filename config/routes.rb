@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root 'main#index'
-  resources :post
+  root 'post#index'
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,8 +12,13 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
 
+  get 'post' => 'post#index' , as: 'latest_post'
+
+  get 'post/:slug_url' => 'post#index', as: 'post_category'
+
+  get 'post/:slug_url/:slug_url' => 'post#show', as: 'post'
+   
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
