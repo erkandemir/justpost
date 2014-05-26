@@ -16,7 +16,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs "Post Details" do
       f.input :title
-      f.input :content
+      f.input :content,:input_html => { :class => "tinymce_editor" }
       f.input :post_category_id, :as=> :select, :collection => PostCategory.all
     end
     f.actions

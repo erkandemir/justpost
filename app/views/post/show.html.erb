@@ -1,8 +1,8 @@
 <% content_for :content do %>
 	<div class="row">
 		<div class="col-md-8">
-		<h1><%= @post.title %> </h1><br>
- 			<%= @post.content %>
+		<h1><%= @post.title.html_safe %> </h1><br>
+ 			<%= @post.content.html_safe %>
 		</div>
 		<div class="col-md-4">
 			<%= render "post_category/categories" %>

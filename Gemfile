@@ -37,6 +37,8 @@ gem 'pg', group: :production
 gem 'debugger'
 
 gem 'pry', group: :development
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

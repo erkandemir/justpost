@@ -240,4 +240,6 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+  config.register_javascript 'tinymce.js'
+
 end
