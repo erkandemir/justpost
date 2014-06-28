@@ -3,8 +3,8 @@
 		<div class="col-md-8">
 		<% @posts.each do |item| %>
   			<% title = "#{item.title}" %></h1>
-			<h3><%= link_to title.html_safe, post_path(item) %></h3>
-			<p><%= truncate item.content.html_safe, length: 160 %> </p>
+			<h3><%= link_to title, post_path(item) %></h3>
+			<p><%= truncate item.content, length: 160 %> </p>
 		<% end %>	
 		</div>
 		<div class="col-md-4">

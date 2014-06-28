@@ -1,6 +1,6 @@
 ActiveAdmin.register PostCategory do
   permit_params :title
-
+  
   index do
     selectable_column
     id_column

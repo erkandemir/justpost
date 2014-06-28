@@ -1,5 +1,10 @@
 class Post < ActiveRecord::Base
-	validates_uniqueness_of :slug_url
+  has_many :categorizes
+  has_many :post_categories, :through=>:categorizes
+  accepts_nested_attributes_for :post_categories
+ 
+
+
 	before_save :before_save
 
 	private

@@ -1,5 +1,6 @@
 class PostCategory < ActiveRecord::Base
-	
+	has_many :categorizes
+  has_many :posts, :through=>:categorizes
 	before_save :before_save
 
 	private
