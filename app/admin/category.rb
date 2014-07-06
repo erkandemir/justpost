@@ -1,4 +1,4 @@
-ActiveAdmin.register PostCategory do
+ActiveAdmin.register Category do
   permit_params :title
   
   index do

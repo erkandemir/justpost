@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 20140622213016) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "categorizes", force: true do |t|
-    t.integer  "post_id"
-    t.integer  "post_category_id"
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.string   "slug_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,19 +70,18 @@ ActiveRecord::Schema.define(version: 20140622213016) do
   end
 
   create_table "post_categories", force: true do |t|
-    t.string   "title"
+    t.integer  "post_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug_url"
   end
 
   create_table "posts", force: true do |t|
-    t.integer  "post_category_id"
     t.string   "title"
     t.text     "content"
+    t.string   "slug_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug_url"
   end
 
 end

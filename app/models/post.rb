@@ -1,10 +1,8 @@
 class Post < ActiveRecord::Base
-  has_many :categorizes
-  has_many :post_categories, :through=>:categorizes
-  accepts_nested_attributes_for :post_categories
+  has_many :post_categories
+  has_many :categories, :through => :post_categories
+  accepts_nested_attributes_for :categories
  
-
-
 	before_save :before_save
 
 	private
@@ -13,7 +11,7 @@ class Post < ActiveRecord::Base
   	end
   	
   	public 
-  	def to_param  # overridden
+  	def to_param  # overridden   
     	slug_url
   	end
 end

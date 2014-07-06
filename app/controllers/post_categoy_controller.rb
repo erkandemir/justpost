@@ -1,2 +1,2 @@
-class PostCategoyController < ApplicationController
+class PostCategoryController < ApplicationController
 end
